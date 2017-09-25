@@ -5,8 +5,11 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import com.ray3k.splashscreen.Core;
 
 public class DesktopLauncher {
-	public static void main (String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new Core(), config);
-	}
+
+    public static void main(String[] arg) {
+        LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        Core core = new Core();
+        core.setSplashWorker(new DesktopSplashWorker());
+        new LwjglApplication(core, config);
+    }
 }
